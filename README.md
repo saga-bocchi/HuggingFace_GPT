@@ -26,10 +26,11 @@ for i, setting in enumerate(settings):
     print(f"\n=== 결과 {i+1} | Temp: {setting['temperature']} | Top-k: {setting['top_k']} | Top-p: {setting['top_p']} ===")
     output = generator(prompt, max_length=50, num_return_sequences=1, **setting)
     print(output[0]['generated_text'])
+```
 
-| 파라미터          | 설명                                                        |
-| ------------- | --------------------------------------------------------- |
-| `temperature` | 확률 분포의 "날카로움" 조절. 낮으면 보수적, 높으면 창의적. (보통 0.7 \~ 1.2 사이 사용) |
-| `top_k`       | 확률이 높은 상위 k개 토큰만 샘플링 대상으로 사용                              |
-| `top_p`       | 누적 확률 p 이하인 토큰들만 고려 (nucleus sampling)                    |
+| 파라미터      | 설명                                                        
+| ------------- | --------------------------------------------------------- 
+| `temperature` | 확률 분포의 "날카로움" 조절. 낮으면 보수적, 높으면 창의적. (보통 0.7 \~ 1.2 사이 사용) 
+| `top_k`       | 확률이 높은 상위 k개 토큰만 샘플링 대상으로 사용                                      
+| `top_p`       | 누적 확률 p 이하인 토큰들만 고려 (nucleus sampling)                    
 
